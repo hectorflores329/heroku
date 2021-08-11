@@ -24,14 +24,12 @@ def mapa():
         zoom_start=2,
     )
 
-    folium.GeoJson(antarctic_ice_edge, name="geojson").add_to(m)
-
-    '''folium.TopoJson(
+    folium.TopoJson(
         json.loads(requests.get(antarctic_ice_shelf_topo).text),
         name="topojson",
-    ).add_to(m)'''
+    ).add_to(m)
 
-    # folium.LayerControl().add_to(m)
+    folium.LayerControl().add_to(m)
 
     return m._repr_html_()
 
