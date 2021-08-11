@@ -26,6 +26,7 @@ def mapa():
 
     folium.TopoJson(
         json.loads(requests.get(antarctic_ice_shelf_topo).text),
+        "objects.ICVU_2019",
         name="topojson",
     ).add_to(m)
 
