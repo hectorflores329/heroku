@@ -44,15 +44,5 @@ def mapa():
 
     return m._repr_html_()
 
-@app.route('/tabla')
-def tabla():
-    response = requests.get(
-        "https://ide.dataintelligence-group.com/geoserver/glaciares/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=glaciares%3AR14_Subcuencas_Glaciares&maxFeatures=50&outputFormat=application%2Fjson"
-    )
-    data = response.json()
-    states = geopandas.GeoDataFrame.from_features(data, crs="EPSG:4326")
-
-    return states.to_html(header="true", table_id="table")
-
 if __name__ == '__main__':
     app.run()
