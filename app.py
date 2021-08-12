@@ -60,7 +60,7 @@ def mapa():
 
             .col1{
                 background-color: #1381c0;
-                font-size: 12px;
+                font-size: 11px;
                 padding: 4px;
                 box-sizing: border-box;
                 color: #FFF;
@@ -71,7 +71,7 @@ def mapa():
 
             .col2{
                 background-color: #f632a3;
-                font-size: 12px;
+                font-size: 11px;
                 padding: 4px;
                 box-sizing: border-box;
                 color: #FFF;
@@ -82,7 +82,7 @@ def mapa():
 
             .col3{
                 background-color: #fba02d;
-                font-size: 12px;
+                font-size: 11px;
                 padding: 4px;
                 box-sizing: border-box;
                 color: #3D3D3D;
