@@ -73,7 +73,7 @@ def mapa():
 
     m = folium.Map(
         location=ubicacion,
-        zoom_start=13,
+        zoom_start=11,
     )
 
     geojson = folium.GeoJson(json.dumps(salida), 
