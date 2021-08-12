@@ -95,7 +95,7 @@ def mapa():
             }
 
             h3{
-                display: inline-block;
+                max-width: 50%;
             }
         </style>
 
