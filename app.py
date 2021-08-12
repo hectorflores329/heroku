@@ -35,8 +35,8 @@ def mapa():
 
     salida = {'type:':'FeatureCollection','features':output_dict}
 
-    hombre = (df["TOTAL_HOMB"].sum() * 100) / df["TOTAL_PERS"].sum()
-    mujer = (df["TOTAL_MUJE"].sum() * 100) / df["TOTAL_PERS"].sum()
+    hombre = round((df["TOTAL_HOMB"].sum() * 100) / df["TOTAL_PERS"].sum(), 2)
+    mujer = round((df["TOTAL_MUJE"].sum() * 100) / df["TOTAL_PERS"].sum(), 2)
 
     html="""
 
@@ -71,6 +71,10 @@ def mapa():
                 text-align: right;
                 max-width: """ + str(mujer) +"""%;
             }
+
+            .background{
+                background-color: #d2d2d2;
+            }
         </style>
 
         <h3><b>DATOS CENSO</b></h3>
@@ -87,12 +91,16 @@ def mapa():
         </div>
 
         <div class="contenedor"> 
-            <div class="col1">
-                <h3>Hombres: """ + str(hombre) + """%</h3>
-            </div> 
-            <div class="col2">
-                <h3>Mujeres: """ + str(mujer) + """%</h3>
-            </div> 
+            <div class="background">
+                <div class="col1">
+                    <h3>Hombres: """ + str(hombre) + """%</h3>
+                </div>
+            </div>
+            <div class="background">
+                <div class="col2">
+                    <h3>Mujeres: """ + str(mujer) + """%</h3>
+                </div> 
+            </div>
         </div>
     """
 
