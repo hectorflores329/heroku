@@ -34,7 +34,7 @@ def mapa():
     mapaJson = f"{url}/Lim_comunas.json"
 
     input_dict = json.loads(requests.get(mapaJson).content)
-    output_dict = [x for x in input_dict['features'] if x['properties']['COMUNA'] == str(cut)]
+    output_dict = [x for x in input_dict['features'] if x['properties']['COMUNA'] == cut]
 
     salida = {'type:':'FeatureCollection','features':output_dict}
 
