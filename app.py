@@ -102,7 +102,7 @@ def mapa():
                 <li><b>REGIÓN:</b> """ + str(df["REGION"][indx]) + """</li>
                 <li><b>PROVINCIA:</b> """ + str(df["PROVINCIA"][indx]) + """</li>
                 <li><b>COMUNA:</b> """ + str(df["COMUNA"][indx]) + """</li>
-                <li><b>HOMBRES:</b> """ + str(df["TOTAL_HOMB"].sum()) + """</li>
+                <li><b>HOMBRES:</b> """ + str('{:,}'.format(df["TOTAL_HOMB"].sum())) + """</li>
                 <li><b>MUJERES:</b> """ + str(df["TOTAL_MUJE"].sum()) + """</li>
                 <li><b>TOTAL PERSONAS:</b> """ + str(df["TOTAL_PERS"].sum()) + """</li>
                 <li><b>TOTAL VIVIENDAS:</b> """ + str(df["TOTAL_VIVI"].sum()) + """</li>
