@@ -19,7 +19,6 @@ def mapa():
 
     m = folium.Map(
         location=[-33.411165140009885, -70.66420044462977],
-        tiles="openstreetmap",
         zoom_start=8,
     )
 
