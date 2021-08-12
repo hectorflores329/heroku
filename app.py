@@ -88,10 +88,10 @@ def mapa():
 
         <div class="contenedor"> 
             <div class="col1">
-                <h3>Columna 1</h3>
+                <h3>Hombres: """ + str(hombre) + """%</h3>
             </div> 
             <div class="col2">
-                <h3>Columna 2</h3>
+                <h3>Mujeres: """ + str(mujer) + """%</h3>
             </div> 
         </div>
     """
