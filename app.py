@@ -50,15 +50,16 @@ def mapa():
 
         </style>
 
-        <h3>Datos e información</h3>
+        <h3>DATOS CENSO/h3>
         <div>
             <ul>
                 <li><b>REGIÓN:</b> """ + str(df["REGION"][indx]) + """</li>
                 <li><b>PROVINCIA:</b> """ + str(df["PROVINCIA"][indx]) + """</li>
                 <li><b>COMUNA:</b> """ + str(df["COMUNA"][indx]) + """</li>
-                <li><b>HOMBRES, 2017 - 2018:</b> """ + str(df["TOTAL_HOMB"][indx]) + """</li>
-                <li><b>MUJERES, 2017 - 2018:</b> """ + str(df["TOTAL_MUJE"][indx]) + """</li>
-                <li><b>TOTAL PERSONAS, 2017 - 2018:</b> """ + str(df["TOTAL_PERS"][indx]) + """</li>
+                <li><b>HOMBRES:</b> """ + str(df["TOTAL_HOMB"][indx]) + """</li>
+                <li><b>MUJERES:</b> """ + str(df["TOTAL_MUJE"][indx]) + """</li>
+                <li><b>TOTAL PERSONAS:</b> """ + str(df["TOTAL_PERS"][indx]) + """</li>
+                <li><b>TOTAL VIVIENDAS:</b> """ + str(df["TOTAL_VIVI"][indx]) + """</li>
             </ul>
         </div>
     """
@@ -68,7 +69,7 @@ def mapa():
     else:
         ubicacion = [df["lat_comuna"][indx], df["lon_comuna"][indx]]
 
-    iframe = folium.IFrame(html=html, width=250, height=210)
+    iframe = folium.IFrame(html=html, width=250, height=200)
     _popup = folium.Popup(iframe, max_width=2650)
 
     m = folium.Map(
