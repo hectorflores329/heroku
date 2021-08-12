@@ -102,6 +102,7 @@ def mapa():
                 </div> 
             </div>
         </div>
+        <hr>
     """
 
     if (cut == 13101):
