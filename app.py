@@ -72,6 +72,14 @@ def mapa():
                 max-width: """ + str(mujer) +"""%;
             }
 
+            .col3{
+                background-color: #fba02d;
+                padding: 4px;
+                color: #FFF;
+                text-align: right;
+                max-width: """ + str(mujer) +"""%;
+            }
+
             .background{
                 background-color: #d2d2d2;
             }
@@ -101,8 +109,13 @@ def mapa():
                     <h3>Mujeres: """ + str(mujer) + """%</h3>
                 </div> 
             </div>
+            <div class="background">
+                <div class="col3">
+                    <h3>Mujeres: """ + str(mujer) + """%</h3>
+                </div> 
+            </div>
         </div>
-        <hr>
+
     """
 
     if (cut == 13101):
@@ -110,7 +123,7 @@ def mapa():
     else:
         ubicacion = [df["lat_comuna"][indx], df["lon_comuna"][indx]]
 
-    iframe = folium.IFrame(html=html, width=250, height=300)
+    iframe = folium.IFrame(html=html, width=250, height=320)
     _popup = folium.Popup(iframe, max_width=2650)
 
     m = folium.Map(
