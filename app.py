@@ -63,11 +63,16 @@ def mapa():
         </div>
     """
 
+    if (cut == 13101):
+        ubicacion = [-33.4537511827, -70.6569543965]
+    else:
+        ubicacion = [df["lat_comuna"][indx], df["lon_comuna"][indx]]
+
     iframe = folium.IFrame(html=html, width=250, height=210)
     _popup = folium.Popup(iframe, max_width=2650)
 
     m = folium.Map(
-        location=[-33.411165140009885, -70.66420044462977],
+        location=ubicacion,
         zoom_start=13,
     )
 
