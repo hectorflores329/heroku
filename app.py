@@ -22,11 +22,10 @@ def mapa():
     datos = "https://raw.githubusercontent.com/hectorflores329/heroku/main/comunas.csv"
     df = pd.read_csv(datos, sep=";")
 
-    
+    vivi = df["TOTAL_VIVI"].sum()
+
     df = df[df["CUT"] == cut]
     indx = df.index[0]
-
-    vivi = df["TOTAL_VIVI"].sum()
 
     url = (
         "https://raw.githubusercontent.com/hectorflores329/heroku/main"
