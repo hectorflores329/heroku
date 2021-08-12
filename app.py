@@ -19,14 +19,14 @@ def mapa():
     except:
         cut = 13101
 
-    # datos = "https://raw.githubusercontent.com/hectorflores329/heroku/main/comunas.csv"
-    # df = pd.read_csv(datos, sep=";")
+    datos = "https://raw.githubusercontent.com/hectorflores329/heroku/main/comunas.csv"
+    df = pd.read_csv(datos, sep=";")
 
     
-    # df = df[df["CUT"] == cut]
-    # indx = df.index[0]
+    df = df[df["CUT"] == cut]
+    indx = df.index[0]
 
-    # vivi = df["TOTAL_VIVI"].sum()
+    vivi = df["TOTAL_VIVI"].sum()
 
     url = (
         "https://raw.githubusercontent.com/hectorflores329/heroku/main"
@@ -38,9 +38,9 @@ def mapa():
 
     salida = {'type:':'FeatureCollection','features':output_dict}
 
-    # hombre = round((df["TOTAL_HOMB"][indx] * 100) / df["TOTAL_PERS"][indx], 1)
-    # mujer = round((df["TOTAL_MUJE"][indx] * 100) / df["TOTAL_PERS"][indx], 1)
-    # vivienda = round((df["TOTAL_VIVI"][indx] * 100) / vivi, 1)
+    hombre = round((df["TOTAL_HOMB"][indx] * 100) / df["TOTAL_PERS"][indx], 1)
+    mujer = round((df["TOTAL_MUJE"][indx] * 100) / df["TOTAL_PERS"][indx], 1)
+    vivienda = round((df["TOTAL_VIVI"][indx] * 100) / vivi, 1)
 
     html="""
 
@@ -101,7 +101,6 @@ def mapa():
         <div>
             <ul>
                 <li><b>REGIÓN:</b> """ + str(df["REGION"][indx]) + """</li>
-                <li><b>PROVINCIA:</b> """ + str(df["PROVINCIA"][indx]) + """</li>
                 <li><b>COMUNA:</b> """ + str(df["COMUNA"][indx]) + """</li>
                 <li><b>HOMBRES:</b> """ + str('{:,}'.format(df["TOTAL_HOMB"][indx]).replace(',','.')) + """</li>
                 <li><b>MUJERES:</b> """ + str('{:,}'.format(df["TOTAL_MUJE"][indx]).replace(',','.')) + """</li>
@@ -133,11 +132,10 @@ def mapa():
     if (cut == 13101):
         ubicacion = [-33.4537511827, -70.6569543965]
     else:
-        ubicacion = [-33.4537511827, -70.6569543965]
-        # pass
+        ubicacion = [df["lat_comuna"][indx], df["lon_comuna"][indx]]
 
-    # iframe = folium.IFrame(html=html, width=250, height=365)
-    # _popup = folium.Popup(iframe, max_width=2650)
+    iframe = folium.IFrame(html=html, width=250, height=365)
+    _popup = folium.Popup(iframe, max_width=2650)
 
     m = folium.Map(
         location=ubicacion,
@@ -148,8 +146,8 @@ def mapa():
                     name="Censo"
                     ).add_to(m)
 
-    # popup = _popup
-    # popup.add_to(geojson)
+    popup = _popup
+    popup.add_to(geojson)
 
     folium.LayerControl().add_to(m)
 
