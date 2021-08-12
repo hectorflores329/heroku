@@ -118,7 +118,7 @@ def mapa():
     )
 
     geojson = folium.GeoJson(json.dumps(salida), 
-                    name="Geojson S.1p"
+                    name="Censo"
                     ).add_to(m)
 
     popup = _popup
