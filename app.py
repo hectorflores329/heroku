@@ -19,7 +19,7 @@ def mapa():
         id = 13101
 
     url = (
-        "https://raw.githubusercontent.com/hectorflores329/heroku/main"
+        "http://ide.dataintelligence-group.com/mapasdi"
     )
     mapaJson = f"{url}/Base_ZonaLoc_Censo.json"
 
