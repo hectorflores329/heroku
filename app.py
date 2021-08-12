@@ -68,7 +68,7 @@ def mapa():
 
     m = folium.Map(
         location=[-33.411165140009885, -70.66420044462977],
-        zoom_start=12,
+        zoom_start=13,
     )
 
     geojson = folium.GeoJson(json.dumps(salida), 
