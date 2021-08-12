@@ -14,7 +14,7 @@ def mapa():
     url = (
         "https://raw.githubusercontent.com/hectorflores329/heroku/main"
     )
-    mapaJson = f"{url}/Base_ZonaLoc_Censo_MapShaper_15p.json"
+    mapaJson = f"{url}/Base_ZonaLoc_Censo_MapShaper_1p.json"
 
 
     m = folium.Map(
@@ -22,7 +22,7 @@ def mapa():
         zoom_start=8,
     )
 
-    folium.GeoJson(mapaJson, name="Geojson S.15p").add_to(m)
+    folium.GeoJson(mapaJson, name="Geojson S.1p").add_to(m)
 
     folium.LayerControl().add_to(m)
 
