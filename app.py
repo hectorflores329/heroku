@@ -28,7 +28,7 @@ def mapa():
     url = (
         "http://ide.dataintelligence-group.com/mapasdi"
     )
-    mapaJson = f"{url}/Base_ZonaLoc_Censo.json"
+    mapaJson = f"{url}/Base_ZonaLoc_Censo_s1p.json"
 
     input_dict = json.loads(requests.get(mapaJson).content)
     output_dict = [x for x in input_dict['features'] if x['properties']['CUT'] == cut]
