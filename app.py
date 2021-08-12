@@ -74,7 +74,7 @@ def mapa():
                 font-size: 12px;
                 padding: 4px;
                 box-sizing: border-box;
-                color: #FFF;
+                color: #3D3D3D;
                 text-align: right;
                 margin-bottom: 5px;
                 max-width: """ + str(mujer) +"""%;
@@ -85,7 +85,7 @@ def mapa():
                 font-size: 12px;
                 padding: 4px;
                 box-sizing: border-box;
-                color: #FFF;
+                color: #3D3D3D;
                 text-align: right;
                 max-width: """ + str(vivienda) +"""%;
             }
@@ -94,7 +94,9 @@ def mapa():
                 background-color: #d2d2d2;
             }
 
-            
+            h3{
+                display: flex;
+            }
         </style>
 
         <h3><b>DATOS CENSO</b></h3>
