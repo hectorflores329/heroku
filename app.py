@@ -26,7 +26,7 @@ def mapa():
     indx = df.index[0]
 
     url = (
-        "http://ide.dataintelligence-group.com/mapasdi"
+        "https://raw.githubusercontent.com/hectorflores329/heroku/main"
     )
     mapaJson = f"{url}/Base_ZonaLoc_Censo_s1p.json"
 
