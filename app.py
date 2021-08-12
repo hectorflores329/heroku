@@ -39,7 +39,7 @@ def mapa():
 
         <style>
             *{
-                font-family: Arial, Tahoma;
+                font-family: Arial, Helvetica, sans-serif;
                 font-size: 13px;
             }
             
@@ -48,6 +48,26 @@ def mapa():
                 margin-left: -40px;
             }
 
+            .contenedor{
+                width: 100%;
+            }
+
+            .col1{
+                background-color: #1381c0;
+                padding: 5px;
+                color: #FFF;
+                text-align: right;
+                margin-bottom: 5px;
+                max-width: 50%;
+            }
+            
+            .col2{
+                background-color: #f632a3;
+                padding: 5px;
+                color: #FFF;
+                text-align: right;
+                max-width: 70%;
+            }
         </style>
 
         <h3><b>DATOS CENSO</b></h3>
