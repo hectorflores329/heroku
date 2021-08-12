@@ -19,13 +19,14 @@ def mapa():
     except:
         cut = 13101
 
-    datos = "https://raw.githubusercontent.com/hectorflores329/heroku/main/Base_ZonaLoc_Censo.csv"
-    df = pd.read_csv(datos)
+    datos = "https://raw.githubusercontent.com/hectorflores329/heroku/main/comunas.csv"
+    df = pd.read_csv(datos, sep=";")
 
-    vivi = df["TOTAL_VIVI"].sum()
-
+    
     df = df[df["CUT"] == cut]
     indx = df.index[0]
+
+    vivi = df["TOTAL_VIVI"].sum()
 
     url = (
         "https://raw.githubusercontent.com/hectorflores329/heroku/main"
@@ -37,9 +38,9 @@ def mapa():
 
     salida = {'type:':'FeatureCollection','features':output_dict}
 
-    hombre = round((df["TOTAL_HOMB"].sum() * 100) / df["TOTAL_PERS"].sum(), 1)
-    mujer = round((df["TOTAL_MUJE"].sum() * 100) / df["TOTAL_PERS"].sum(), 1)
-    vivienda = round((df["TOTAL_VIVI"].sum() * 100) / vivi, 1)
+    hombre = round((df["TOTAL_HOMB"][indx] * 100) / df["TOTAL_PERS"][indx], 1)
+    mujer = round((df["TOTAL_MUJE"][indx] * 100) / df["TOTAL_PERS"][indx], 1)
+    vivienda = round((df["TOTAL_VIVI"][indx] * 100) / vivi, 1)
 
     html="""
 
@@ -102,10 +103,10 @@ def mapa():
                 <li><b>REGIÓN:</b> """ + str(df["REGION"][indx]) + """</li>
                 <li><b>PROVINCIA:</b> """ + str(df["PROVINCIA"][indx]) + """</li>
                 <li><b>COMUNA:</b> """ + str(df["COMUNA"][indx]) + """</li>
-                <li><b>HOMBRES:</b> """ + str('{:,}'.format(df["TOTAL_HOMB"].sum()).replace(',','.')) + """</li>
-                <li><b>MUJERES:</b> """ + str('{:,}'.format(df["TOTAL_MUJE"].sum()).replace(',','.')) + """</li>
-                <li><b>TOTAL PERSONAS:</b> """ + str('{:,}'.format(df["TOTAL_PERS"].sum()).replace(',','.')) + """</li>
-                <li><b>TOTAL VIVIENDAS:</b> """ + str('{:,}'.format(df["TOTAL_VIVI"].sum()).replace(',','.')) + """</li>
+                <li><b>HOMBRES:</b> """ + str('{:,}'.format(df["TOTAL_HOMB"][indx]).replace(',','.')) + """</li>
+                <li><b>MUJERES:</b> """ + str('{:,}'.format(df["TOTAL_MUJE"][indx]).replace(',','.')) + """</li>
+                <li><b>TOTAL PERSONAS:</b> """ + str('{:,}'.format(df["TOTAL_PERS"][indx]).replace(',','.')) + """</li>
+                <li><b>TOTAL VIVIENDAS:</b> """ + str('{:,}'.format(df["TOTAL_VIVI"][indx]).replace(',','.')) + """</li>
             </ul>
         </div>
 
