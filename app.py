@@ -111,17 +111,17 @@ def mapa():
         <div class="contenedor"> 
             <div class="background">
                 <div class="col1">
-                    <h3>Hombres: """ + str(hombre) + """%</h3>
+                    <h3>""" + str(hombre) + """%</h3>
                 </div>
             </div>
             <div class="background">
                 <div class="col2">
-                    <h3>Mujeres: """ + str(mujer) + """%</h3>
+                    <h3>""" + str(mujer) + """%</h3>
                 </div> 
             </div>
             <div class="background">
                 <div class="col3">
-                    <h3>Vivienda: """ + str(vivienda) + """%</h3>
+                    <h3>""" + str(vivienda) + """%</h3>
                 </div> 
             </div>
         </div>
