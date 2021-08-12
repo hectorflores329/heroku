@@ -60,7 +60,7 @@ def mapa():
                 margin-bottom: 5px;
                 max-width: 50%;
             }
-            
+
             .col2{
                 background-color: #f632a3;
                 padding: 5px;
@@ -81,6 +81,15 @@ def mapa():
                 <li><b>TOTAL PERSONAS:</b> """ + str(df["TOTAL_PERS"].sum()) + """</li>
                 <li><b>TOTAL VIVIENDAS:</b> """ + str(df["TOTAL_VIVI"].sum()) + """</li>
             </ul>
+        </div>
+
+        <div class="contenedor"> 
+            <div class="col1">
+                <h3>Columna 1</h3>
+            </div> 
+            <div class="col2">
+                <h3>Columna 2</h3>
+            </div> 
         </div>
     """
 
