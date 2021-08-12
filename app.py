@@ -3,6 +3,7 @@ import folium
 import folium.plugins as plugins
 from flask import request
 import numpy as np
+import pandas as pd
 import requests
 import json
 import requests
@@ -18,6 +19,12 @@ def mapa():
     except:
         cut = 13101
 
+    datos = "https://raw.githubusercontent.com/hectorflores329/heroku/main/Base_ZonaLoc_Censo.csv"
+    df = pd.read_csv(datos)
+
+    df = df[df["CUT"] == cut]
+    indx = df.index[0]
+
     url = (
         "http://ide.dataintelligence-group.com/mapasdi"
     )
@@ -30,7 +37,7 @@ def mapa():
 
     m = folium.Map(
         location=[-33.411165140009885, -70.66420044462977],
-        zoom_start=10,
+        zoom_start=12,
     )
 
     folium.GeoJson(json.dumps(salida), 
