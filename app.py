@@ -61,7 +61,7 @@ def mapa():
                 color: #FFF;
                 text-align: right;
                 margin-bottom: 5px;
-                max-width: 100%;
+                max-width: """ + str(50) +"""%;
             }
 
             .col2{
@@ -101,7 +101,7 @@ def mapa():
     else:
         ubicacion = [df["lat_comuna"][indx], df["lon_comuna"][indx]]
 
-    iframe = folium.IFrame(html=html, width=250, height=280)
+    iframe = folium.IFrame(html=html, width=250, height=290)
     _popup = folium.Popup(iframe, max_width=2650)
 
     m = folium.Map(
