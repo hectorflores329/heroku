@@ -14,7 +14,7 @@ def mapa():
     url = (
         "https://raw.githubusercontent.com/hectorflores329/heroku/main"
     )
-    mapaJson = f"{url}/Base_ZonaLoc_Censo_MapShaper_1p.json"
+    mapaJson = f"{url}/Base_ZonaLoc_Censo.json"
 
 
     m = folium.Map(
