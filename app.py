@@ -13,10 +13,10 @@ app = Flask(__name__)
 def mapa():
 
     try:
-        id = request.args.get("id")
-        id = int(id)
+        cut = request.args.get("cut")
+        cut = int(cut)
     except:
-        id = 13101
+        cut = 13101
 
     url = (
         "http://ide.dataintelligence-group.com/mapasdi"
@@ -24,13 +24,13 @@ def mapa():
     mapaJson = f"{url}/Base_ZonaLoc_Censo.json"
 
     input_dict = json.loads(requests.get(mapaJson).content)
-    output_dict = [x for x in input_dict['features'] if x['properties']['CUT'] == id]
+    output_dict = [x for x in input_dict['features'] if x['properties']['CUT'] == cut]
 
     salida = {'type:':'FeatureCollection','features':output_dict}
 
     m = folium.Map(
         location=[-33.411165140009885, -70.66420044462977],
-        zoom_start=8,
+        zoom_start=10,
     )
 
     folium.GeoJson(json.dumps(salida), 
