@@ -61,7 +61,8 @@ def mapa():
             .col1{
                 background-color: #1381c0;
                 font-size: 12px;
-                padding: max(4px);
+                padding: 4px;
+                box-sizing: border-box;
                 color: #FFF;
                 text-align: right;
                 margin-bottom: 5px;
@@ -71,7 +72,8 @@ def mapa():
             .col2{
                 background-color: #f632a3;
                 font-size: 12px;
-                padding: max(4px);
+                padding: 4px;
+                box-sizing: border-box;
                 color: #FFF;
                 text-align: right;
                 margin-bottom: 5px;
@@ -81,7 +83,8 @@ def mapa():
             .col3{
                 background-color: #fba02d;
                 font-size: 12px;
-                padding: max(4px);
+                padding: 4px;
+                box-sizing: border-box;
                 color: #FFF;
                 text-align: right;
                 max-width: """ + str(vivienda) +"""%;
@@ -130,7 +133,7 @@ def mapa():
     else:
         ubicacion = [df["lat_comuna"][indx], df["lon_comuna"][indx]]
 
-    iframe = folium.IFrame(html=html, width=250, height=340)
+    iframe = folium.IFrame(html=html, width=250, height=350)
     _popup = folium.Popup(iframe, max_width=2650)
 
     m = folium.Map(
