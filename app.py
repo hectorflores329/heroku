@@ -34,7 +34,7 @@ def mapa():
     mapaJson = f"{url}/Lim_comunas.json"
 
     input_dict = json.loads(requests.get(mapaJson).content)
-    output_dict = [x for x in input_dict['features'] if x['properties']['COMUNA'] == cut]
+    output_dict = [x for x in input_dict['features'] if x['properties']['COMUNA'] == str(cut)]
 
     salida = {'type:':'FeatureCollection','features':output_dict}
 
@@ -135,8 +135,8 @@ def mapa():
     else:
         ubicacion = [df["lat_comuna"][indx], df["lon_comuna"][indx]]
 
-    iframe = folium.IFrame(html=html, width=250, height=365)
-    _popup = folium.Popup(iframe, max_width=2650)
+    # iframe = folium.IFrame(html=html, width=250, height=365)
+    # _popup = folium.Popup(iframe, max_width=2650)
 
     m = folium.Map(
         location=ubicacion,
@@ -147,8 +147,8 @@ def mapa():
                     name="Censo"
                     ).add_to(m)
 
-    popup = _popup
-    popup.add_to(geojson)
+    # popup = _popup
+    # popup.add_to(geojson)
 
     folium.LayerControl().add_to(m)
 
