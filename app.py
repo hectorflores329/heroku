@@ -95,7 +95,7 @@ def mapa():
             }
 
             h3{
-                 word-break:break-all;
+                word-break:normal;
             }
         </style>
 
