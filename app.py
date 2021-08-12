@@ -57,7 +57,7 @@ def mapa():
 
             .col1{
                 background-color: #1381c0;
-                padding: 5px;
+                padding: 4px;
                 color: #FFF;
                 text-align: right;
                 margin-bottom: 5px;
@@ -66,7 +66,7 @@ def mapa():
 
             .col2{
                 background-color: #f632a3;
-                padding: 5px;
+                padding: 4px;
                 color: #FFF;
                 text-align: right;
                 max-width: """ + str(mujer) +"""%;
