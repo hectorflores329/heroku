@@ -94,9 +94,6 @@ def mapa():
                 background-color: #d2d2d2;
             }
 
-            h3{
-                max-width: 50%;
-            }
         </style>
 
         <h3><b>DATOS CENSO</b></h3>
