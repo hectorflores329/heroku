@@ -28,10 +28,10 @@ def mapa():
     url = (
         "https://raw.githubusercontent.com/hectorflores329/heroku/main"
     )
-    mapaJson = f"{url}/Base_ZonaLoc_Censo_s1p.json"
+    mapaJson = f"{url}/Lim_comunas.json"
 
     input_dict = json.loads(requests.get(mapaJson).content)
-    output_dict = [x for x in input_dict['features'] if x['properties']['CUT'] == cut]
+    output_dict = [x for x in input_dict['features'] if x['properties']['COMUNA'] == cut]
 
     salida = {'type:':'FeatureCollection','features':output_dict}
 
