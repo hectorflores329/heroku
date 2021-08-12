@@ -74,7 +74,7 @@ def mapa():
                 font-size: 12px;
                 padding: 4px;
                 box-sizing: border-box;
-                color: #3D3D3D;
+                color: #FFF;
                 text-align: right;
                 margin-bottom: 5px;
                 max-width: """ + str(mujer) +"""%;
@@ -95,7 +95,7 @@ def mapa():
             }
 
             h3{
-                display: flex;
+                 word-break:break-all;
             }
         </style>
 
