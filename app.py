@@ -14,21 +14,16 @@ def mapa():
     url = (
         "https://raw.githubusercontent.com/hectorflores329/heroku/main"
     )
-    antarctic_ice_edge = f"{url}/_ICVU_2019.json"
-    antarctic_ice_shelf_topo = f"{url}/Base_ZonaLoc_Censo_MapShaper_topo.json"
+    mapaJson = f"{url}/Base_ZonaLoc_Censo_MapShaper_15p.json"
 
 
     m = folium.Map(
-        location=[-59.1759, -11.6016],
-        tiles="cartodbpositron",
-        zoom_start=2,
+        location=[-33.411165140009885, -70.66420044462977],
+        tiles="openstreetmap",
+        zoom_start=8,
     )
 
-    folium.TopoJson(
-        json.loads(requests.get(antarctic_ice_shelf_topo).text),
-        "objects.Base_ZonaLoc_Censo_MapShaper",
-        name="topojson",
-    ).add_to(m)
+    folium.GeoJson(mapaJson, name="Geojson S.15p").add_to(m)
 
     folium.LayerControl().add_to(m)
 
