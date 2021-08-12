@@ -35,6 +35,9 @@ def mapa():
 
     salida = {'type:':'FeatureCollection','features':output_dict}
 
+    hombre = (df["TOTAL_HOMB"].sum() * 100) / df["TOTAL_PERS"].sum()
+    mujer = (df["TOTAL_MUJE"].sum() * 100) / df["TOTAL_PERS"].sum()
+
     html="""
 
         <style>
@@ -98,7 +101,7 @@ def mapa():
     else:
         ubicacion = [df["lat_comuna"][indx], df["lon_comuna"][indx]]
 
-    iframe = folium.IFrame(html=html, width=250, height=240)
+    iframe = folium.IFrame(html=html, width=250, height=280)
     _popup = folium.Popup(iframe, max_width=2650)
 
     m = folium.Map(
