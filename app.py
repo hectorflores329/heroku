@@ -22,6 +22,8 @@ def mapa():
     datos = "https://raw.githubusercontent.com/hectorflores329/heroku/main/Base_ZonaLoc_Censo.csv"
     df = pd.read_csv(datos)
 
+    vivi = df["TOTAL_VIVI"].sum()
+
     df = df[df["CUT"] == cut]
     indx = df.index[0]
 
@@ -37,6 +39,7 @@ def mapa():
 
     hombre = round((df["TOTAL_HOMB"].sum() * 100) / df["TOTAL_PERS"].sum(), 1)
     mujer = round((df["TOTAL_MUJE"].sum() * 100) / df["TOTAL_PERS"].sum(), 1)
+    vivienda = round((df["TOTAL_VIVI"].sum() * 100) / vivi, 1)
 
     html="""
 
@@ -69,6 +72,7 @@ def mapa():
                 padding: 4px;
                 color: #FFF;
                 text-align: right;
+                margin-bottom: 5px;
                 max-width: """ + str(mujer) +"""%;
             }
 
@@ -77,7 +81,7 @@ def mapa():
                 padding: 4px;
                 color: #FFF;
                 text-align: right;
-                max-width: """ + str(mujer) +"""%;
+                max-width: """ + str(vivienda) +"""%;
             }
 
             .background{
@@ -111,7 +115,7 @@ def mapa():
             </div>
             <div class="background">
                 <div class="col3">
-                    <h3>Mujeres: """ + str(mujer) + """%</h3>
+                    <h3>Vivienda: """ + str(vivienda) + """%</h3>
                 </div> 
             </div>
         </div>
@@ -123,7 +127,7 @@ def mapa():
     else:
         ubicacion = [df["lat_comuna"][indx], df["lon_comuna"][indx]]
 
-    iframe = folium.IFrame(html=html, width=250, height=320)
+    iframe = folium.IFrame(html=html, width=250, height=340)
     _popup = folium.Popup(iframe, max_width=2650)
 
     m = folium.Map(
