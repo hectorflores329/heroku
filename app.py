@@ -12,7 +12,7 @@ app = Flask(__name__)
 def mapa():
 
     url = (
-        "https://raw.githubusercontent.com/hectorflores329/heroku/main"
+        "https://raw.githubusercontent.com/hectorflores329/herokugee/main"
     )
     antarctic_ice_edge = f"{url}/_ICVU_2019.json"
     antarctic_ice_shelf_topo = f"{url}/_ICVU_2019_topo.json"
