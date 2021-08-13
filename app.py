@@ -200,6 +200,7 @@ def mapa2():
                 float: left;
                 text-align: center;
                 margin: 5px;
+                font-size: 14px;
             }
 
             .contenedor1{
@@ -347,7 +348,7 @@ def mapa2():
     else:
         ubicacion = [df["lat_comuna"][indx], df["lon_comuna"][indx]]
 
-    iframe = folium.IFrame(html=html, width=600, height=490)
+    iframe = folium.IFrame(html=html, width=600, height=500)
     _popup = folium.Popup(iframe, max_width=2650)
 
     m = folium.Map(
