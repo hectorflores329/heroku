@@ -370,7 +370,8 @@ def mapa2():
         _popup = folium.Popup(iframe, max_width=2650)
 
         geojson = folium.GeoJson(json.dumps(salida), 
-                        name="Censo"
+                        name="Censo",
+                        tooltip = df["COMUNA"][indx]
                         ).add_to(m)
 
         popup = _popup
