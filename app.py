@@ -192,14 +192,72 @@ def mapa2():
                 font-family: Arial, Helvetica, sans-serif;
                 font-size: 13px;
             }
-            
+
+            .contenedor0{
+                /* background-color: #c4732c; */
+                width: 100%;
+                height: 6%;
+                float: left;
+                text-align: center;
+            }
+
+            .contenedor1{
+                /* background-color: #FF7800; */
+                width: 20%;
+                height: 54%;
+                float: left;
+                padding: 8px;
+                box-sizing: border-box;
+            }
+
+            .contenedor2{
+                /* background-color: #FF2500; */
+                width: 80%;
+                height: 54%;
+                float: left;
+                padding: 8px;
+                box-sizing: border-box;
+            }
+
+            .contenedor3{
+                /* background-color: #F89610; */
+                width: 20%;
+                height: 40%;
+                float: left;
+                padding: 8px;
+                box-sizing: border-box;
+                text-align: center;
+            }
+
+            .contenedor4{
+                /* background-color: #FFF000; */
+                width: 80%;
+                height: 40%;
+                float: left;
+                padding: 8px;
+                box-sizing: border-box;
+            }
+
+            .container{
+                width: 100%;
+                height: 100%;
+                /* border: 2px dashed black; */
+            }
+
             li{
                 list-style:none;
                 margin-left: -40px;
             }
 
-            .contenedor{
+            .escudo{
+                width: auto;
+                height: 100%;
+            }
+
+            .ubicacion{
                 width: 100%;
+                height: 100%;
+                border-radius: 4px;
             }
 
             .col1{
@@ -210,7 +268,7 @@ def mapa2():
                 color: #FFF;
                 text-align: right;
                 margin-bottom: 5px;
-                max-width: """ + str(hombre) +"""%;
+                max-width: 40%;
             }
 
             .col2{
@@ -221,52 +279,55 @@ def mapa2():
                 color: #FFF;
                 text-align: right;
                 margin-bottom: 5px;
-                max-width: """ + str(mujer) +"""%;
+                max-width: 60%;
             }
-
-            .col3{
-                background-color: #fba02d;
-                font-size: 11px;
-                padding: 4px;
-                box-sizing: border-box;
-                color: #3D3D3D;
-                text-align: right;
-                max-width: """ + str(vivienda) +"""%;
-            }
-
+            
             .background{
                 background-color: #d2d2d2;
             }
-
         </style>
 
-        <h3><b>DATOS CENSO</b></h3>
-        <div>
-            <ul>
-                <li><b>REGIÓN:</b> """ + str(df["REGION"][indx]) + """</li>
-                <li><b>COMUNA:</b> """ + str(df["COMUNA"][indx]) + """</li>
-                <li><b>HOMBRES:</b> """ + str('{:,}'.format(df["TOTAL_HOMB"][indx]).replace(',','.')) + """</li>
-                <li><b>MUJERES:</b> """ + str('{:,}'.format(df["TOTAL_MUJE"][indx]).replace(',','.')) + """</li>
-                <li><b>TOTAL PERSONAS:</b> """ + str('{:,}'.format(df["TOTAL_PERS"][indx]).replace(',','.')) + """</li>
-                <li><b>TOTAL VIVIENDAS:</b> """ + str('{:,}'.format(df["TOTAL_VIVI"][indx]).replace(',','.')) + """</li>
-            </ul>
-        </div>
+        <div class="container">
+            <div class="contenedor0">
+                <p><b>DATOS CENSO</b></p>
+            </div>
 
-        <div class="contenedor"> 
-            <div class="background">
-                <div class="col1">
-                    <h3>Hombres: """ + str(hombre) + """%</h3>
+            <div class="contenedor1">
+                <ul>
+                    <li><h3>INFORMACIÓN GENERAL</h3></li>
+                    <li><b>REGIÓN:</b><br>""" + str(df["REGION"][indx]) + """</li>
+                    <li><b>COMUNA:</b><br>""" + str(df["COMUNA"][indx]) + """</li>
+                    <li><b>HOMBRES:</b><br>""" + str('{:,}'.format(df["TOTAL_HOMB"][indx]).replace(',','.')) + """</li>
+                    <li><b>MUJERES:</b><br>""" + str('{:,}'.format(df["TOTAL_MUJE"][indx]).replace(',','.')) + """</li>
+                    <li><b>TOTAL PERSONAS:</b><br>""" + str('{:,}'.format(df["TOTAL_PERS"][indx]).replace(',','.')) + """</li>
+                    <li><b>TOTAL VIVIENDAS:</b><br>""" + str('{:,}'.format(df["TOTAL_VIVI"][indx]).replace(',','.')) + """</li>
+                </ul>
+            </div>
+
+            <div class="contenedor2">
+                <img src="ubi.png" alt="Ubicación geográfica" class="ubicacion"/>
+            </div>
+
+            <div class="contenedor3">
+                <img src="Logomuni-01.png" alt="Comuna" class="escudo" />
+            </div>
+
+            <div class="contenedor4">
+                <ul>
+                    <li><h3>POBLACIÓN TOTAL EN LA COMUNA: SANTIAGO/h3></li>
+                    <li><b>HOMBRES:</b><br>""" + str(df["REGION"][indx]) + """</li>
+                    <li><b>MUJERES:</b><br>""" + str(df["COMUNA"][indx]) + """</li>
+                </ul>
+                <div class="background">
+                    <div class="col1">
+                        <h3>Hombres: """ + str(hombre) + """%</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="background">
-                <div class="col2">
-                    <h3>Mujeres: """ + str(mujer) + """%</h3>
-                </div> 
-            </div>
-            <div class="background">
-                <div class="col3">
-                    <h3>Vivienda: """ + str(vivienda) + """%</h3>
-                </div> 
+                <div class="background">
+                    <div class="col2">
+                        <h3>Mujeres: """ + str(mujer) + """%</h3>
+                    </div> 
+                </div>
             </div>
         </div>
 
@@ -277,7 +338,7 @@ def mapa2():
     else:
         ubicacion = [df["lat_comuna"][indx], df["lon_comuna"][indx]]
 
-    iframe = folium.IFrame(html=html, width=250, height=365)
+    iframe = folium.IFrame(html=html, width=650, height=400)
     _popup = folium.Popup(iframe, max_width=2650)
 
     m = folium.Map(
