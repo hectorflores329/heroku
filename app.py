@@ -187,14 +187,14 @@ def mapa2():
     vivi = dfRegion["TOTAL_VIVI"].sum()
 
     
-    if(region == region):
+    if(region == 13):
         ubicacion = [-33.4537511827, -70.6569543965]
     else:
         ubicacion = [dfRegion["lat_comuna"][indxR], dfRegion["lon_comuna"][indxR]]
 
     m = folium.Map(
         location=ubicacion,
-        zoom_start=11,
+        zoom_start=8,
     )
 
     for i in cuts:
