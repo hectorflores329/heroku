@@ -320,7 +320,7 @@ def mapa2():
             </div>
 
             <div class="contenedor3">
-                <img src='Logomuni-01.png' alt='Comuna' class='escudo' />
+                <img src='""" + str(df["Escudo"][indx]) + """' alt='Comuna' class='escudo' />
             </div>
 
             <div class="contenedor4">
