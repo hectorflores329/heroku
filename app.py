@@ -247,7 +247,7 @@ def mapa2():
 
             li{
                 list-style:none;
-                margin-left: -40px;
+                margin-left: -50px;
             }
 
             .escudo{
@@ -316,8 +316,7 @@ def mapa2():
             <div class="contenedor4">
                 <ul>
                     <li><h3>POBLACIÓN TOTAL EN LA COMUNA: SANTIAGO</h3></li>
-                    <li><b>HOMBRES:</b><br>""" + str(df["REGION"][indx]) + """</li>
-                    <li><b>MUJERES:</b><br>""" + str(df["COMUNA"][indx]) + """</li>
+                    <li><b>HOMBRES:</b><br>""" + str('{:,}'.format(df["TOTAL_HOMB"][indx]).replace(',','.')) + """ | <b>MUJERES: </b></li>
                 </ul>
                 <div class="background">
                     <div class="col1">
