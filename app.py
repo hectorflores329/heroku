@@ -250,6 +250,11 @@ def mapa2():
                 margin-left: -50px;
             }
 
+            .contenedor4 li{
+                list-style:none;
+                margin-left: -40px;
+            }
+
             .escudo{
                 width: auto;
                 height: 100%;
@@ -338,7 +343,7 @@ def mapa2():
     else:
         ubicacion = [df["lat_comuna"][indx], df["lon_comuna"][indx]]
 
-    iframe = folium.IFrame(html=html, width=600, height=420)
+    iframe = folium.IFrame(html=html, width=600, height=450)
     _popup = folium.Popup(iframe, max_width=2650)
 
     m = folium.Map(
