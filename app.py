@@ -203,7 +203,7 @@ def mapa2():
 
         output_dict = [x for x in input_dict['features'] if x['properties']['COMUNA'] == str(cut)]
 
-        salida = {'type:':'FeatureCollection','features':output_dict}
+        salida = {'type':'FeatureCollection','features':output_dict}
 
         hombre = round((df["TOTAL_HOMB"][indx] * 100) / df["TOTAL_PERS"][indx], 1)
         mujer = round((df["TOTAL_MUJE"][indx] * 100) / df["TOTAL_PERS"][indx], 1)
@@ -366,12 +366,20 @@ def mapa2():
 
         """
 
+        if(hombre > mujer):
+            color = "#1381c0"
+        else:
+            color = "#f632a3"
+
         iframe = folium.IFrame(html=html, width=600, height=500)
         _popup = folium.Popup(iframe, max_width=2650)
 
         geojson = folium.GeoJson(json.dumps(salida), 
                         name="Censo",
-                        tooltip = "<b>Comuna: </b>" + str(df["COMUNA"][indx])
+                        tooltip = "<b>Comuna: </b>" + str(df["COMUNA"][indx]),
+                        style_function = lambda feature: {
+                            "fillColor": color
+                        },
                         ).add_to(m)
 
         popup = _popup
