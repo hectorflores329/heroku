@@ -438,7 +438,7 @@ def mapa2():
         <li><span style='background:#f632a3;opacity:0.7;'></span>Mujeres</li>
         <br>
         <li>Región con más poblacion:</li>
-        <li><a href="http://geemapa.herokuapp.com/mapa2?region=8">Ver región</></li>
+        <li><a href="https://geemapa.herokuapp.com/mapa2?region=8">Ver región</></li>
 
     </ul>
     </div>
