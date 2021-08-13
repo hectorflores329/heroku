@@ -170,6 +170,8 @@ def mapa2():
     cuts = dfRegion["ID_COM"].unique().tolist()
     cuts
 
+    indxR = dfRegion.index[0]
+
     url = (
         "https://raw.githubusercontent.com/hectorflores329/heroku/main"
     )
@@ -185,9 +187,13 @@ def mapa2():
     vivi = dfRegion["TOTAL_VIVI"].sum()
 
     
+    if(region == region):
+        ubicacion = [-33.4537511827, -70.6569543965]
+    else:
+        ubicacion = [dfRegion["lat_comuna"][indxR], dfRegion["lon_comuna"][indxR]]
 
     m = folium.Map(
-        location=[-33.4537511827, -70.6569543965],
+        location=ubicacion,
         zoom_start=11,
     )
 
