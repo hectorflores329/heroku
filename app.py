@@ -410,7 +410,7 @@ def mapa2():
 
     <script>
         function recargar() {
-            parent.location.reload(http://geemapa.herokuapp.com/mapa2?region=8);
+            parent.document.location.href = "https://geemapa.herokuapp.com/mapa2?region=";
         }
     </script>
     
