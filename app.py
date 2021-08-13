@@ -372,7 +372,7 @@ def mapa2():
 
         """
 
-        if(hombre > mujer):
+        if(df["TOTAL_HOMB"][indx] > df["TOTAL_MUJE"][indx]):
             color = "#1381c0"
         else:
             color = "#f632a3"
