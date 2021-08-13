@@ -245,10 +245,13 @@ def mapa2():
                 /* border: 2px dashed black; */
             }
 
+            ul{
+                margin-top:15px;
+            }
+            
             li{
                 list-style:none;
                 margin-left: -50px;
-                margin-top:15px;
             }
 
             .contenedor4 li{
@@ -270,23 +273,23 @@ def mapa2():
             .col1{
                 background-color: #1381c0;
                 font-size: 11px;
-                padding: 3px;
+                padding: 4px;
                 box-sizing: border-box;
                 color: #FFF;
                 text-align: right;
                 margin-bottom: 5px;
-                max-width: 40%;
+                max-width: """ + str(hombre) +"""%;
             }
 
             .col2{
                 background-color: #f632a3;
                 font-size: 11px;
-                padding: 3px;
+                padding: 4px;
                 box-sizing: border-box;
                 color: #FFF;
                 text-align: right;
                 margin-bottom: 5px;
-                max-width: 60%;
+                max-width: """ + str(mujer) +"""%;
             }
             
             .background{
@@ -322,7 +325,7 @@ def mapa2():
             <div class="contenedor4">
                 <ul>
                     <li><h3>POBLACIÓN TOTAL EN LA COMUNA: SANTIAGO</h3></li>
-                    <li><b>HOMBRES:</b>""" + str('{:,}'.format(df["TOTAL_HOMB"][indx]).replace(',','.')) + """ | <b>MUJERES: </b> """ + str('{:,}'.format(df["TOTAL_MUJE"][indx]).replace(',','.')) + """</li>
+                    <li><b>HOMBRES: </b>""" + str(hombre) + """% | <b>MUJERES: </b> """ + str(mujer) + """%</li>
                 </ul>
                 <div class="background">
                     <div class="col1">
