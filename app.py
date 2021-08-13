@@ -316,7 +316,7 @@ def mapa2():
             </div>
 
             <div class="contenedor2">
-                <img src="ubi.png" alt="Ubicación geográfica" class="ubicacion"/>
+                <img src="https://github.com/hectorflores329/heroku/raw/main/santiago.png" alt="Ubicación geográfica" class="ubicacion"/>
             </div>
 
             <div class="contenedor3">
