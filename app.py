@@ -20,7 +20,7 @@ def mapa():
         cut = 13101
 
     datos = "https://raw.githubusercontent.com/hectorflores329/heroku/main/comunas.csv"
-    df = pd.read_csv(datos, sep=";")
+    df = pd.read_csv(datos)
 
     vivi = df["TOTAL_VIVI"].sum()
 
