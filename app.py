@@ -407,6 +407,12 @@ def mapa2():
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        function recargar() {
+            parent.location.reload();
+        }
+    </script>
     
     <script>
     $( function() {
@@ -438,7 +444,7 @@ def mapa2():
         <li><span style='background:#f632a3;opacity:0.7;'></span>Mujeres</li>
         <br>
         <li>Región con más poblacion:</li>
-        <li><a href="https://geemapa.herokuapp.com/mapa2?region=8">Ver región</></li>
+        <li><a href="#" onclick="recargar()">Ver región</></li>
 
     </ul>
     </div>
