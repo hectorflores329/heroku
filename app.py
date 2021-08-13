@@ -166,7 +166,7 @@ def mapa2():
     datos = "https://raw.githubusercontent.com/hectorflores329/heroku/main/comunas.csv"
     dfRegion = pd.read_csv(datos)
 
-    dfRegion = dfRegion[dfRegion["COD_REGION"] == 13]
+    dfRegion = dfRegion[dfRegion["COD_REGION"] == region]
     cuts = dfRegion["ID_COM"].unique().tolist()
     cuts
 
@@ -207,7 +207,6 @@ def mapa2():
 
         hombre = round((df["TOTAL_HOMB"][indx] * 100) / df["TOTAL_PERS"][indx], 1)
         mujer = round((df["TOTAL_MUJE"][indx] * 100) / df["TOTAL_PERS"][indx], 1)
-        vivienda = round((df["TOTAL_VIVI"][indx] * 100) / vivi, 1)
 
         html="""
 
@@ -333,7 +332,7 @@ def mapa2():
 
                 <div class="contenedor4">
                     <ul>
-                        <li><h3>POBLACIÓN TOTAL EN LA COMUNA: SANTIAGO</h3></li>
+                        <li><h3>POBLACIÓN TOTAL EN LA COMUNA: """ + str(df["COMUNA"][indx]) + """</h3></li>
                         <li><b>HOMBRES: </b>""" + str(hombre) + """% | <b>MUJERES: </b> """ + str(mujer) + """%</li>
                     </ul>
                     <div class="background">
