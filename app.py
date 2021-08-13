@@ -153,7 +153,7 @@ def mapa():
     return m._repr_html_()
 
 @app.route('/mapa2')
-def mapa():
+def mapa2():
 
     try:
         cut = request.args.get("cut")
