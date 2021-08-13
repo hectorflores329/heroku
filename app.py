@@ -379,8 +379,13 @@ def mapa2():
                         name="Censo",
                         tooltip = "<b>Comuna: </b>" + str(df["COMUNA"][indx]),
                         style_function = lambda feature: {
-                            "fillColor": "#f632a3"
-                        },
+                                "fillColor": "#1381c0"
+                                if feature["properties"]["T_HOM"] > feature["properties"]["T_MUJ"]
+                                else "#f632a3",
+                                "color": "black",
+                                "weight": 2,
+                                "dashArray": "5, 5",
+                            },
                         ).add_to(m)
 
         popup = _popup
