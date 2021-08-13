@@ -199,11 +199,12 @@ def mapa2():
                 height: 6%;
                 float: left;
                 text-align: center;
+                margin: 5px;
             }
 
             .contenedor1{
                 /* background-color: #FF7800; */
-                width: 20%;
+                width: 30%;
                 height: 54%;
                 float: left;
                 padding: 8px;
@@ -212,7 +213,7 @@ def mapa2():
 
             .contenedor2{
                 /* background-color: #FF2500; */
-                width: 80%;
+                width: 70%;
                 height: 54%;
                 float: left;
                 padding: 8px;
@@ -221,7 +222,7 @@ def mapa2():
 
             .contenedor3{
                 /* background-color: #F89610; */
-                width: 20%;
+                width: 30%;
                 height: 40%;
                 float: left;
                 padding: 8px;
@@ -231,7 +232,7 @@ def mapa2():
 
             .contenedor4{
                 /* background-color: #FFF000; */
-                width: 80%;
+                width: 70%;
                 height: 40%;
                 float: left;
                 padding: 8px;
@@ -314,7 +315,7 @@ def mapa2():
 
             <div class="contenedor4">
                 <ul>
-                    <li><h3>POBLACIÓN TOTAL EN LA COMUNA: SANTIAGO/h3></li>
+                    <li><h3>POBLACIÓN TOTAL EN LA COMUNA: SANTIAGO</h3></li>
                     <li><b>HOMBRES:</b><br>""" + str(df["REGION"][indx]) + """</li>
                     <li><b>MUJERES:</b><br>""" + str(df["COMUNA"][indx]) + """</li>
                 </ul>
