@@ -431,13 +431,14 @@ def mapa2():
         border-radius:6px; padding: 10px; font-size:14px; right: 20px; bottom: 20px;'>
         
     <div class='legend-title'>CENSO (POBLACIÓN)</div>
+    <div class='legend-title'>""" + str(df["COMUNA"][indx]) + """</div>
     <div class='legend-scale'>
     <ul class='legend-labels'>
         <li><span style='background:#1381c0;opacity:0.7;'></span>Hombres</li>
         <li><span style='background:#f632a3;opacity:0.7;'></span>Mujeres</li>
         <br>
         <li>Región con más poblacion:</li>
-        <li><a href="#">Ver</></li>
+        <li><a href="http://geemapa.herokuapp.com/mapa2?region=8">Ver</></li>
 
     </ul>
     </div>
