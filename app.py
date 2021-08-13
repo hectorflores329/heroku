@@ -264,7 +264,7 @@ def mapa2():
             .col1{
                 background-color: #1381c0;
                 font-size: 11px;
-                padding: 4px;
+                padding: 3px;
                 box-sizing: border-box;
                 color: #FFF;
                 text-align: right;
@@ -275,7 +275,7 @@ def mapa2():
             .col2{
                 background-color: #f632a3;
                 font-size: 11px;
-                padding: 4px;
+                padding: 3px;
                 box-sizing: border-box;
                 color: #FFF;
                 text-align: right;
@@ -316,7 +316,7 @@ def mapa2():
             <div class="contenedor4">
                 <ul>
                     <li><h3>POBLACIÓN TOTAL EN LA COMUNA: SANTIAGO</h3></li>
-                    <li><b>HOMBRES:</b><br>""" + str('{:,}'.format(df["TOTAL_HOMB"][indx]).replace(',','.')) + """ | <b>MUJERES: </b></li>
+                    <li><b>HOMBRES:</b>""" + str('{:,}'.format(df["TOTAL_HOMB"][indx]).replace(',','.')) + """ | <b>MUJERES: </b> """ + str('{:,}'.format(df["TOTAL_MUJE"][indx]).replace(',','.')) + """</li>
                 </ul>
                 <div class="background">
                     <div class="col1">
