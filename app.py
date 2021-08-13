@@ -303,22 +303,7 @@ def mapa2():
                 <p><b>DATOS CENSO</b></p>
             </div>
 
-            <div class="contenedor1">
-                <ul>
-                    <li><h3>INFORMACIÓN GENERAL</h3></li>
-                    <li><b>REGIÓN:</b><br>""" + str(df["REGION"][indx]) + """</li>
-                    <li><b>COMUNA:</b><br>""" + str(df["COMUNA"][indx]) + """</li>
-                    <li><b>HOMBRES:</b><br>""" + str('{:,}'.format(df["TOTAL_HOMB"][indx]).replace(',','.')) + """</li>
-                    <li><b>MUJERES:</b><br>""" + str('{:,}'.format(df["TOTAL_MUJE"][indx]).replace(',','.')) + """</li>
-                    <li><b>TOTAL PERSONAS:</b><br>""" + str('{:,}'.format(df["TOTAL_PERS"][indx]).replace(',','.')) + """</li>
-                    <li><b>TOTAL VIVIENDAS:</b><br>""" + str('{:,}'.format(df["TOTAL_VIVI"][indx]).replace(',','.')) + """</li>
-                </ul>
-            </div>
-
-            <div class="contenedor2">
-                <img src="https://github.com/hectorflores329/heroku/raw/main/santiago.png" alt="Ubicación geográfica" class="ubicacion"/>
-            </div>
-
+            
             <div class="contenedor3">
                 <img src='""" + str(df["Escudo"][indx]) + """' alt='Comuna' class='escudo' />
             </div>
@@ -338,6 +323,22 @@ def mapa2():
                         <h3>Mujeres: """ + str(mujer) + """%</h3>
                     </div> 
                 </div>
+            </div>
+            
+            <div class="contenedor1">
+                <ul>
+                    <li><h3>INFORMACIÓN GENERAL</h3></li>
+                    <li><b>REGIÓN:</b><br>""" + str(df["REGION"][indx]) + """</li>
+                    <li><b>COMUNA:</b><br>""" + str(df["COMUNA"][indx]) + """</li>
+                    <li><b>HOMBRES:</b><br>""" + str('{:,}'.format(df["TOTAL_HOMB"][indx]).replace(',','.')) + """</li>
+                    <li><b>MUJERES:</b><br>""" + str('{:,}'.format(df["TOTAL_MUJE"][indx]).replace(',','.')) + """</li>
+                    <li><b>TOTAL PERSONAS:</b><br>""" + str('{:,}'.format(df["TOTAL_PERS"][indx]).replace(',','.')) + """</li>
+                    <li><b>TOTAL VIVIENDAS:</b><br>""" + str('{:,}'.format(df["TOTAL_VIVI"][indx]).replace(',','.')) + """</li>
+                </ul>
+            </div>
+
+            <div class="contenedor2">
+                <img src="https://github.com/hectorflores329/heroku/raw/main/santiago.png" alt="Ubicación geográfica" class="ubicacion"/>
             </div>
         </div>
 
