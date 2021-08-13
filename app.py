@@ -372,11 +372,6 @@ def mapa2():
 
         """
 
-        if(df["TOTAL_HOMB"][indx] > df["TOTAL_MUJE"][indx]):
-            color = "#1381c0"
-        else:
-            color = "#f632a3"
-
         iframe = folium.IFrame(html=html, width=600, height=500)
         _popup = folium.Popup(iframe, max_width=2650)
 
@@ -384,7 +379,7 @@ def mapa2():
                         name="Censo",
                         tooltip = "<b>Comuna: </b>" + str(df["COMUNA"][indx]),
                         style_function = lambda feature: {
-                            "fillColor": color
+                            "fillColor": "#f632a3"
                         },
                         ).add_to(m)
 
