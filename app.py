@@ -348,7 +348,7 @@ def mapa2():
     else:
         ubicacion = [df["lat_comuna"][indx], df["lon_comuna"][indx]]
 
-    iframe = folium.IFrame(html=html, width=600, height=580)
+    iframe = folium.IFrame(html=html, width=600, height=540)
     _popup = folium.Popup(iframe, max_width=2650)
 
     m = folium.Map(
