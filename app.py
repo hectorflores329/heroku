@@ -371,7 +371,7 @@ def mapa2():
 
         geojson = folium.GeoJson(json.dumps(salida), 
                         name="Censo",
-                        tooltip = df["COMUNA"][indx]
+                        tooltip = "<b>Comuna: </b>" + str(df["COMUNA"][indx])
                         ).add_to(m)
 
         popup = _popup
