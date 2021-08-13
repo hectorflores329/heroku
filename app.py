@@ -435,6 +435,9 @@ def mapa2():
     <ul class='legend-labels'>
         <li><span style='background:#1381c0;opacity:0.7;'></span>Hombres</li>
         <li><span style='background:#f632a3;opacity:0.7;'></span>Mujeres</li>
+        <br>
+        <li>Región con más poblacion:</li>
+        <li><a href="#">Ver</></li>
 
     </ul>
     </div>
