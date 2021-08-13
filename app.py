@@ -224,7 +224,7 @@ def mapa2():
             .contenedor3{
                 /* background-color: #F89610; */
                 width: 30%;
-                height: 40%;
+                height: 38%;
                 float: left;
                 padding: 8px;
                 box-sizing: border-box;
@@ -234,7 +234,7 @@ def mapa2():
             .contenedor4{
                 /* background-color: #FFF000; */
                 width: 70%;
-                height: 40%;
+                height: 38%;
                 float: left;
                 padding: 8px;
                 box-sizing: border-box;
@@ -303,7 +303,6 @@ def mapa2():
                 <p><b>DATOS CENSO</b></p>
             </div>
 
-            
             <div class="contenedor3">
                 <img src='""" + str(df["Escudo"][indx]) + """' alt='Comuna' class='escudo' />
             </div>
@@ -324,7 +323,7 @@ def mapa2():
                     </div> 
                 </div>
             </div>
-            
+
             <div class="contenedor1">
                 <ul>
                     <li><h3>INFORMACIÓN GENERAL</h3></li>
