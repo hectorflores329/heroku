@@ -517,7 +517,7 @@ def mapa3():
         
     except:
         cut = 13101
-        _variable = "TOTAL_PERS"
+        variable = "TOTAL_PERS"
 
     _variable = ""
 
