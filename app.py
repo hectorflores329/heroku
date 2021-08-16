@@ -441,7 +441,7 @@ def mapa2():
 
     <style>
         .logo{
-            width: 20%
+            width: 5%
         }
     </style>
     </head>
@@ -463,9 +463,9 @@ def mapa2():
         <li><a href="#" onclick="recargar()">Ver región</></li>
 
     </ul>
-    <div>
-        <center><img class="logo" src="https://github.com/hectorflores329/heroku/raw/main/logo_DataIntelligence_normal.png" alt="Data Intelligence"/></center>
     </div>
+    <div>
+        <img class="logo" src="https://github.com/hectorflores329/heroku/raw/main/logo_DataIntelligence_normal.png" alt="Data Intelligence"/>
     </div>
     </div>
     
