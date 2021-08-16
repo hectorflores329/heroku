@@ -543,7 +543,7 @@ def mapa3():
         <script>
             function contador() {
                 const counters = document.querySelectorAll('.counter');
-                const speed = 100;
+                const speed = 1000;
                 counters.forEach(counter => {
                 const updateCount = () => {
                 const target = +counter.getAttribute('data-target');
@@ -616,7 +616,7 @@ def mapa3():
         </div>
 
         <div onClick="contador()" class="col2" id="conta">
-            <div class='counter' data-target='""" + df[variable][indx] + """'>0</div>
+            <div class='counter' data-target='""" + str(df[variable][indx]) + """'>0</div>
             <h3><center>CANTIDAD</center></h3>
         </div>
 
@@ -632,7 +632,7 @@ def mapa3():
     else:
         ubicacion = [df["lat_comuna"][indx], df["lon_comuna"][indx]]
 
-    iframe = folium.IFrame(html=html, width=250, height=365)
+    iframe = folium.IFrame(html=html, width=250, height=280)
     _popup = folium.Popup(iframe, max_width=2650)
 
     m = folium.Map(
