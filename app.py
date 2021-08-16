@@ -536,30 +536,6 @@ def mapa3():
     salida = {'type:':'FeatureCollection','features':output_dict}
 
     html="""
-        <script>
-            $('.counter').each(function() {
-            var $this = $(this),
-                countTo = $this.attr('data-count');
-            
-            $({ countNum: $this.text()}).animate({
-                countNum: countTo
-            },
-            {
-                duration: 5000,
-                easing:'linear',
-                step: function() {
-                $this.text(Math.floor(this.countNum));
-                },
-                complete: function() {
-                $this.text(this.countNum);
-                //alert('finished');
-                }
-
-            });  
-            
-            });
-        </script>
-
         <style>
             *{
                 font-family: Arial, Helvetica, sans-serif;
@@ -603,13 +579,11 @@ def mapa3():
                 <li><b>REGIÓN:</b> """ + str(df["PROVINCIA"][indx]) + """</li>
                 <li><b>COMUNA:</b> """ + str(df["COMUNA"][indx]) + """</li>
                 <li><b>VARIABLE:</b> """ + variable + """</li>
-                <li><b>VALOR:</b> """ + str('{:,}'.format(df[variable][indx]).replace(',','.')) + """</li>
             </ul>
         </div>
 
         <div class="col2">
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-            <div class="counter" data-count="150">0</div>
+            <div class="counter">""" + str('{:,}'.format(df[variable][indx]).replace(',','.')) + """</div>
             <h3><center>CANTIDAD</center></h3>
         </div>
 
@@ -620,7 +594,7 @@ def mapa3():
     else:
         ubicacion = [df["lat_comuna"][indx], df["lon_comuna"][indx]]
 
-    iframe = folium.IFrame(html=html, width=250, height=280)
+    iframe = folium.IFrame(html=html, width=250, height=250)
     _popup = folium.Popup(iframe, max_width=2650)
 
     m = folium.Map(
