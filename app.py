@@ -513,6 +513,7 @@ def mapa3():
         cut = int(cut)
 
         variable = request.args.get("var")
+        variable = str(variable)
     except:
         cut = 13101
         variable = "TOTAL_PERS"
