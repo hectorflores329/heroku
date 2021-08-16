@@ -329,10 +329,6 @@ def mapa2():
                     background-color: #d2d2d2;
                 }
 
-                .logo{
-                    width: 20%
-                }
-
                 .logoPopup{
                     width: 40%
                 }
@@ -442,6 +438,12 @@ def mapa2():
     });
 
     </script>
+
+    <style>
+        .logo{
+            width: 20%
+        }
+    </style>
     </head>
     <body>
 
