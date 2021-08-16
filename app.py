@@ -543,7 +543,7 @@ def mapa3():
         <script>
             function contador() {
                 const counters = document.querySelectorAll('.counter');
-                const speed = 100;
+                const speed = 50;
                 counters.forEach(counter => {
                 const updateCount = () => {
                 const target = +counter.getAttribute('data-target');
@@ -586,8 +586,6 @@ def mapa3():
             .col2{
                 background-color: #2a7fce;
                 font-size: 11px;
-                padding: 4px;
-                box-sizing: border-box;
                 color: #FFF;
                 text-align: right;
                 margin-bottom: 5px;
@@ -613,9 +611,9 @@ def mapa3():
             </ul>
         </div>
 
-        <div onmouseover="contador()" class="col2">
-            <div class="counter" data-target="2500">0</div>
-            <h3>CANTIDAD</h3>
+        <div onClick="contador()" class="col2">
+            <div class="counter" data-target="2500">¿?</div>
+            <h3><center>CANTIDAD</center></h3>
         </div>
 
     """
