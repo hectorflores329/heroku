@@ -603,7 +603,7 @@ def mapa3():
                 <li><b>REGIÓN:</b> """ + str(df["REGION"][indx]) + """</li>
                 <li><b>REGIÓN:</b> """ + str(df["PROVINCIA"][indx]) + """</li>
                 <li><b>COMUNA:</b> """ + str(df["COMUNA"][indx]) + """</li>
-                <li><b>VARIABLE:</b> """ + _variable + """</li>
+                <li><b>VARIABLE:</b> """ + _variable.upper() + """</li>
             </ul>
         </div>
 
