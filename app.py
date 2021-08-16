@@ -17,8 +17,10 @@ def mapa():
     try:
         cut = request.args.get("cut")
         cut = int(cut)
+
     except:
         cut = 13101
+
 
     datos = "https://raw.githubusercontent.com/hectorflores329/heroku/main/comunas.csv"
     df = pd.read_csv(datos)
@@ -509,8 +511,11 @@ def mapa3():
     try:
         cut = request.args.get("cut")
         cut = int(cut)
+
+        variable = request.args.get("var")
     except:
         cut = 13101
+        variable = "TOTAL_PERS"
 
     datos = "https://raw.githubusercontent.com/hectorflores329/heroku/main/comunas.csv"
     df = pd.read_csv(datos)
@@ -593,11 +598,10 @@ def mapa3():
         <div>
             <ul>
                 <li><b>REGIÓN:</b> """ + str(df["REGION"][indx]) + """</li>
+                <li><b>REGIÓN:</b> """ + str(df["PROVINCIA"][indx]) + """</li>
                 <li><b>COMUNA:</b> """ + str(df["COMUNA"][indx]) + """</li>
-                <li><b>HOMBRES:</b> """ + str('{:,}'.format(df["TOTAL_HOMB"][indx]).replace(',','.')) + """</li>
-                <li><b>MUJERES:</b> """ + str('{:,}'.format(df["TOTAL_MUJE"][indx]).replace(',','.')) + """</li>
-                <li><b>TOTAL PERSONAS:</b> """ + str('{:,}'.format(df["TOTAL_PERS"][indx]).replace(',','.')) + """</li>
-                <li><b>TOTAL VIVIENDAS:</b> """ + str('{:,}'.format(df["TOTAL_VIVI"][indx]).replace(',','.')) + """</li>
+                <li><b>VARIABLE:</b> """ + variable + """</li>
+                <li><b>VALOR:</b> """ + str('{:,}'.format(df[variable][indx]).replace(',','.')) + """</li>
             </ul>
         </div>
 
