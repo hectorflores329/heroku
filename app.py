@@ -613,7 +613,7 @@ def mapa3():
             </ul>
         </div>
 
-        <div onmouseover="contador()" class="col2">
+        <div onLoad="contador()" class="col2">
             <div class="counter" data-target="2500">0</div>
             <h3>CANTIDAD</h3>
         </div>
