@@ -439,11 +439,6 @@ def mapa2():
 
     </script>
 
-    <style>
-        .logo{
-            width: 5%
-        }
-    </style>
     </head>
     <body>
 
@@ -463,9 +458,6 @@ def mapa2():
         <li><a href="#" onclick="recargar()">Ver región</></li>
 
     </ul>
-    </div>
-    <div>
-        <img class="logo" src="https://github.com/hectorflores329/heroku/raw/main/logo_DataIntelligence_normal.png" alt="Data Intelligence"/>
     </div>
     </div>
     
