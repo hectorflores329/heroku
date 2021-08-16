@@ -586,6 +586,8 @@ def mapa3():
             .col2{
                 background-color: #2a7fce;
                 font-size: 11px;
+                padding: 4px;
+                box-sizing: border-box;
                 color: #FFF;
                 text-align: right;
                 margin-bottom: 5px;
@@ -596,7 +598,6 @@ def mapa3():
                 font-size:25px;
                 font-weight:bold;
                 text-align:center;
-                cursor: pointer;
             } 
 
         </style>
@@ -612,9 +613,9 @@ def mapa3():
             </ul>
         </div>
 
-        <div onClick="contador()" class="col2">
-            <div class="counter" data-target="2500">¿?<br><center>CANTIDAD</center></div>
-            
+        <div onmouseover="contador()" class="col2">
+            <div class="counter" data-target="2500">0</div>
+            <h3>CANTIDAD</h3>
         </div>
 
     """
