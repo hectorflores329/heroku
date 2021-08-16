@@ -540,7 +540,23 @@ def mapa3():
     vivienda = round((df["TOTAL_VIVI"][indx] * 100) / vivi, 1)
 
     html="""
-
+        <script>
+            function contador() {
+                const counters = document.querySelectorAll('.counter');
+                const speed = 100;
+                counters.forEach(counter => {
+                const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
+                if (count < target) {
+                counter.innerText = count + inc;
+                setTimeout(updateCount, 1);
+                } else {
+                counter.innerText = target;}};
+            updateCount();});}
+        </script>
+        
         <style>
             *{
                 font-family: Arial, Helvetica, sans-serif;
@@ -591,6 +607,12 @@ def mapa3():
             .background{
                 background-color: #d2d2d2;
             }
+
+            .counter{
+                font-size:25px;
+                font-weight:bold;
+                text-align:center;
+            } 
 
         </style>
 
