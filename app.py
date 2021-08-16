@@ -558,21 +558,20 @@ def mapa3():
 
     html="""
         <script>
-            function count(){
-                var counter = { var: 0 };
-                TweenMax.to(counter, 3, {
-                    var: 178963, 
-                    onUpdate: function () {
-                    var number = Math.ceil(counter.var);
-                    $('.counter').html(number);
-                    if(number === counter.var){ count.kill(); }
-                    },
-                    onComplete: function(){
-                    count();
-                    },    
-                    ease:Circ.easeOut
-                });
-                }
+            function contador() {
+                const counters = document.querySelectorAll('.counter');
+                const speed = 100;
+                counters.forEach(counter => {
+                const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
+                if (count < target) {
+                counter.innerText = count + inc;
+                setTimeout(updateCount, 1);
+                } else {
+                counter.innerText = target;}};
+            updateCount();});}
         </script>
 
         <style>
@@ -622,12 +621,13 @@ def mapa3():
             </ul>
         </div>
 
-        <divclass="col2" id="conta">
-            <div class="counter">0</div>
+        <div onClick="contador()" class="col2" id="conta">
+            <div class='counter' data-target='""" + str(df[variable][indx]) + """'>0</div>
+            <h3><center>CANTIDAD</center></h3>
         </div>
 
         <script type="text/javascript">
-            count()
+            contador()
             oQuickReply.swap('conta');
         </script>
 
