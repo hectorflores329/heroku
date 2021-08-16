@@ -332,6 +332,10 @@ def mapa2():
                 .logo{
                     width: 20%
                 }
+
+                .logoPopup{
+                    width: 40%
+                }
             </style>
 
             <div class="container">
@@ -377,13 +381,13 @@ def mapa2():
                 </div>
 
                 <div>
-                    <center><img class="logo" src="https://github.com/hectorflores329/heroku/raw/main/logo_DataIntelligence_normal.png" alt="Data Intelligence"/></center>
+                    <center><img class="logoPopup" src="https://github.com/hectorflores329/heroku/raw/main/logo_DataIntelligence_normal.png" alt="Data Intelligence"/></center>
                 </div>
             </div>
 
         """
 
-        iframe = folium.IFrame(html=html, width=600, height=550)
+        iframe = folium.IFrame(html=html, width=600, height=600)
         _popup = folium.Popup(iframe, max_width=2650)
 
         geojson = folium.GeoJson(json.dumps(salida), 
@@ -459,7 +463,9 @@ def mapa2():
     </ul>
     </div>
     </div>
-    
+    <div>
+        <center><img class="logo" src="https://github.com/hectorflores329/heroku/raw/main/logo_DataIntelligence_normal.png" alt="Data Intelligence"/></center>
+    </div>
     </body>
     </html>
 
