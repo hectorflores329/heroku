@@ -537,23 +537,27 @@ def mapa3():
 
     html="""
         <script>
-            function count(){
-            var counter = { var: 0 };
-            TweenMax.to(counter, 3, {
-                var: 178963, 
-                onUpdate: function () {
-                var number = Math.ceil(counter.var);
-                $('.counter').html(number);
-                if(number === counter.var){ count.kill(); }
+            $('.counter').each(function() {
+            var $this = $(this),
+                countTo = $this.attr('data-count');
+            
+            $({ countNum: $this.text()}).animate({
+                countNum: countTo
+            },
+            {
+                duration: 5000,
+                easing:'linear',
+                step: function() {
+                $this.text(Math.floor(this.countNum));
                 },
-                onComplete: function(){
-                count();
-                },    
-                ease:Circ.easeOut
-            });
-            }
+                complete: function() {
+                $this.text(this.countNum);
+                //alert('finished');
+                }
 
-            count();
+            });  
+            
+            });
         </script>
 
         <style>
@@ -604,7 +608,8 @@ def mapa3():
         </div>
 
         <div class="col2">
-            <div class="counter">0</div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <div class="counter" data-count="150">0</div>
             <h3><center>CANTIDAD</center></h3>
         </div>
 
