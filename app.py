@@ -535,27 +535,6 @@ def mapa3():
 
     salida = {'type:':'FeatureCollection','features':output_dict}
 
-    if (variable == "TOTAL_PERS"):
-        variable = "Total personas"
-
-    elif (variable == "TOTAL_HOMB"):
-        variable = "Total hombres"
-
-    elif (variable == "TOTAL_MUJE"):
-        variable = "Total mujeres"
-
-    elif (variable == "PUEBLOS_IN"):
-        variable = "Pueblos indígenas"
-
-    elif (variable == "TOTAL_VIV_"):
-        variable = "Total viviendas"
-
-    elif (variable == "VIV_OCUPA_"):
-        variable = "Viviendas ocupadas"
-
-    else:
-        variable = "No definida"
-
     html="""
         <script>
             function contador() {
