@@ -543,7 +543,7 @@ def mapa3():
         <script>
             function contador() {
                 const counters = document.querySelectorAll('.counter');
-                const speed = 10;
+                const speed = 1;
                 counters.forEach(counter => {
                 const updateCount = () => {
                 const target = +counter.getAttribute('data-target');
@@ -551,7 +551,7 @@ def mapa3():
                 const inc = target / speed;
                 if (count < target) {
                 counter.innerText = count + inc;
-                setTimeout(updateCount, 1);
+                setTimeout(updateCount, 5);
                 } else {
                 counter.innerText = target;}};
             updateCount();});}
