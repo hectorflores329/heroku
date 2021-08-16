@@ -328,6 +328,10 @@ def mapa2():
                 .background{
                     background-color: #d2d2d2;
                 }
+
+                .logo{
+                    width: 20%
+                }
             </style>
 
             <div class="container">
@@ -371,11 +375,15 @@ def mapa2():
                 <div class="contenedor2">
                     <img src="https://github.com/hectorflores329/heroku/raw/main/santiago.png" alt="Ubicación geográfica" class="ubicacion"/>
                 </div>
+
+                <div>
+                    <center><img class="logo" src="https://github.com/hectorflores329/heroku/raw/main/logo_DataIntelligence_normal.png" alt="Data Intelligence"/></center>
+                </div>
             </div>
 
         """
 
-        iframe = folium.IFrame(html=html, width=600, height=500)
+        iframe = folium.IFrame(html=html, width=600, height=550)
         _popup = folium.Popup(iframe, max_width=2650)
 
         geojson = folium.GeoJson(json.dumps(salida), 
