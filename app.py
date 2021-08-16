@@ -556,7 +556,7 @@ def mapa3():
                 counter.innerText = target;}};
             updateCount();});}
         </script>
-        
+
         <style>
             *{
                 font-family: Arial, Helvetica, sans-serif;
@@ -584,28 +584,14 @@ def mapa3():
             }
 
             .col2{
-                background-color: #f632a3;
+                background-color: #2a7fce;
                 font-size: 11px;
                 padding: 4px;
                 box-sizing: border-box;
                 color: #FFF;
                 text-align: right;
                 margin-bottom: 5px;
-                max-width: """ + str(mujer) +"""%;
-            }
-
-            .col3{
-                background-color: #fba02d;
-                font-size: 11px;
-                padding: 4px;
-                box-sizing: border-box;
-                color: #3D3D3D;
-                text-align: right;
-                max-width: """ + str(vivienda) +"""%;
-            }
-
-            .background{
-                background-color: #d2d2d2;
+                max-width: 100%;
             }
 
             .counter{
@@ -627,22 +613,9 @@ def mapa3():
             </ul>
         </div>
 
-        <div class="contenedor"> 
-            <div class="background">
-                <div class="col1">
-                    <h3>Hombres: """ + str(hombre) + """%</h3>
-                </div>
-            </div>
-            <div class="background">
-                <div class="col2">
-                    <h3>Mujeres: """ + str(mujer) + """%</h3>
-                </div> 
-            </div>
-            <div class="background">
-                <div class="col3">
-                    <h3>Vivienda: """ + str(vivienda) + """%</h3>
-                </div> 
-            </div>
+        <div onmouseover="contador()" class="col2">
+            <div class="counter" data-target="2500">0</div>
+            <h3>CANTIDAD</h3>
         </div>
 
     """
