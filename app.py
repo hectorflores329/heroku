@@ -595,6 +595,7 @@ def mapa3():
             }
 
             .counter{
+                padding-top: 5px;
                 font-size:30px;
                 font-weight:bold;
                 text-align:center;
@@ -615,7 +616,7 @@ def mapa3():
         </div>
 
         <div onClick="contador()" class="col2">
-            <div class="counter" data-target="2500">0</div>
+            <div class="counter" data-target="2500">¿?</div>
             <h3><center>CANTIDAD</center></h3>
         </div>
 
