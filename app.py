@@ -514,30 +514,33 @@ def mapa3():
 
         variable = request.args.get("var")
         variable = str(variable)
+        
     except:
         cut = 13101
-        variable = "TOTAL_PERS"
+        _variable = "TOTAL_PERS"
+
+    _variable = ""
 
     if (variable == "TOTAL_PERS"):
-        variable = "Total personas"
+        _variable = "Total personas"
 
     elif (variable == "TOTAL_HOMB"):
-        variable = "Total hombres"
+        _variable = "Total hombres"
 
     elif (variable == "TOTAL_MUJE"):
-        variable = "Total mujeres"
+        _variable = "Total mujeres"
 
     elif (variable == "PUEBLOS_IN"):
-        variable = "Pueblos indígenas"
+        _variable = "Pueblos indígenas"
 
     elif (variable == "TOTAL_VIV_"):
-        variable = "Total viviendas"
+        _variable = "Total viviendas"
 
     elif (variable == "VIV_OCUPA_"):
-        variable = "Viviendas ocupadas"
+        _variable = "Viviendas ocupadas"
 
     else:
-        variable = "No definida"
+        _variable = "No definida"
 
     datos = "https://raw.githubusercontent.com/hectorflores329/heroku/main/comunas.csv"
     df = pd.read_csv(datos)
@@ -600,7 +603,7 @@ def mapa3():
                 <li><b>REGIÓN:</b> """ + str(df["REGION"][indx]) + """</li>
                 <li><b>REGIÓN:</b> """ + str(df["PROVINCIA"][indx]) + """</li>
                 <li><b>COMUNA:</b> """ + str(df["COMUNA"][indx]) + """</li>
-                <li><b>VARIABLE:</b> """ + variable + """</li>
+                <li><b>VARIABLE:</b> """ + _variable + """</li>
             </ul>
         </div>
 
