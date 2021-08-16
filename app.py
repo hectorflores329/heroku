@@ -535,26 +535,44 @@ def mapa3():
 
     salida = {'type:':'FeatureCollection','features':output_dict}
 
-    hombre = round((df["TOTAL_HOMB"][indx] * 100) / df["TOTAL_PERS"][indx], 1)
-    mujer = round((df["TOTAL_MUJE"][indx] * 100) / df["TOTAL_PERS"][indx], 1)
-    vivienda = round((df["TOTAL_VIVI"][indx] * 100) / vivi, 1)
+    if (variable == "TOTAL_PERS"):
+        variable = "Total personas"
+
+    elif (variable == "TOTAL_HOMB"):
+        variable = "Total hombres"
+
+    elif (variable == "TOTAL_MUJE"):
+        variable = "Total mujeres"
+
+    elif (variable == "PUEBLOS_IN"):
+        variable = "Pueblos indígenas"
+
+    elif (variable == "TOTAL_VIV_"):
+        variable = "Total viviendas"
+
+    elif (variable == "VIV_OCUPA_"):
+        variable = "Viviendas ocupadas"
+
+    else:
+        variable = "No definida"
 
     html="""
         <script>
-            function contador() {
-                const counters = document.querySelectorAll('.counter');
-                const speed = 1;
-                counters.forEach(counter => {
-                const updateCount = () => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                const inc = target / speed;
-                if (count < target) {
-                counter.innerText = count + inc;
-                setTimeout(updateCount, 5);
-                } else {
-                counter.innerText = target;}};
-            updateCount();});}
+            function count(){
+                var counter = { var: 0 };
+                TweenMax.to(counter, 3, {
+                    var: 178963, 
+                    onUpdate: function () {
+                    var number = Math.ceil(counter.var);
+                    $('.counter').html(number);
+                    if(number === counter.var){ count.kill(); }
+                    },
+                    onComplete: function(){
+                    count();
+                    },    
+                    ease:Circ.easeOut
+                });
+                }
         </script>
 
         <style>
@@ -570,17 +588,6 @@ def mapa3():
 
             .contenedor{
                 width: 100%;
-            }
-
-            .col1{
-                background-color: #1381c0;
-                font-size: 11px;
-                padding: 4px;
-                box-sizing: border-box;
-                color: #FFF;
-                text-align: right;
-                margin-bottom: 5px;
-                max-width: """ + str(hombre) +"""%;
             }
 
             .col2{
@@ -615,13 +622,12 @@ def mapa3():
             </ul>
         </div>
 
-        <div onClick="contador()" class="col2" id="conta">
-            <div class='counter' data-target='""" + str(df[variable][indx]) + """'>0</div>
-            <h3><center>CANTIDAD</center></h3>
+        <divclass="col2" id="conta">
+            <div class="counter">0</div>
         </div>
 
         <script type="text/javascript">
-            contador()
+            count()
             oQuickReply.swap('conta');
         </script>
 
