@@ -616,7 +616,7 @@ def mapa3():
         </div>
 
         <div onClick="contador()" class="col2" id="conta">
-            <div class="counter" data-target="2500">0</div>
+            <div class="counter" data-target="2,500">0</div>
             <h3><center>CANTIDAD</center></h3>
         </div>
 
