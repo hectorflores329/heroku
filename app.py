@@ -552,6 +552,8 @@ def mapa3():
                 ease:Circ.easeOut
             });
             }
+
+            count();
         </script>
 
         <style>
@@ -601,15 +603,10 @@ def mapa3():
             </ul>
         </div>
 
-        <div class="col2" id="conta">
+        <div class="col2">
             <div class="counter">0</div>
             <h3><center>CANTIDAD</center></h3>
         </div>
-
-        <script type="text/javascript">
-            count();
-            oQuickReply.swap('conta');
-        </script>
 
     """
 
